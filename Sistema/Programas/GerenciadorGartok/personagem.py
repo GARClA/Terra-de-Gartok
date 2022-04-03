@@ -10,6 +10,7 @@ class Personagem:
         self.rola_ocupaçao()
         self.rola_tendencia()
         self.rola_ouro()
+        self.rola_sexo()
 
     def rola_atributos(self):
         self.força = random.randrange(1,7) + random.randrange(1,7) + random.randrange(1,7)
@@ -100,9 +101,15 @@ class Personagem:
     def rola_ouro(self):
         self.moedas = random.randrange(1,11) + random.randrange(1,11) + random.randrange(1,11) + random.randrange(1,11) + random.randrange(1,11)
 
+    def rola_sexo(self):
+        sexo = random.randrange(0,2)
+        if sexo == 0: self.sexo = 'Masculino'
+        else: self.sexo = 'Feminino'
+
     def __str__(self):
         string = f'''
 Nome: (NOMEAR)
+Sexo: {self.sexo}
 Tendência: {self.tendencia}
 Raça: {self.raça}
 Ocupação: {self.ocupacao}
